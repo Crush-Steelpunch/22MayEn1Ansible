@@ -1,0 +1,27 @@
+# ansible 127.0.0.1 -m apt -a 'name=nginx state=present' -b
+
+- hosts: localhost
+  tasks:
+  - name: Install nginx httpd  (state=present is optional)
+    apt:
+      name: nginx=1.18.0
+      state: present
+  - name: Install my super ace website
+    copy:
+      content: 'This is my ansible deployed Web Server Using Nginx'
+      dest: /var/www/html/index.html 
+  - name: Create a directory in the webserver
+    file:
+      path: /var/www/html/subdirectory
+      state: directory
+      mode: '0755'
+  - name: Ensure nginx is started and enabled
+    systemd:
+      name: nginx.service
+      state: started
+      enabled: yes
+  - name: run some command for the lols
+    command: grep ubuntu /etc/passwd
+  - name: run a shell, we can use pipe and redirects and stuff
+    shell:
+      cmd: grep ubuntu /etc/passwd >> /var/www/html/index.html
