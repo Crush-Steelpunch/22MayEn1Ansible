@@ -2,8 +2,10 @@
   hosts: localhost
   become: true
   tasks:
-          - name: uninstall
-            apt:
-                    name: nginx
-                    state: absent
-                    autoremove: yes
+  - name: uninstall
+    apt:
+      name: nginx
+      state: absent
+      autoremove: yes
+      
+
