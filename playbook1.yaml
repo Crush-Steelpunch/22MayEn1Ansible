@@ -3,6 +3,8 @@
 - hosts: localhost
   become: true
   tasks:
+  - name: create a directory which should cause a failure 
+    command: mkdir /var/testdir1
   - name: Install nginx httpd  (state=present is optional)
     apt:
       #name: nginx=1.18.0
@@ -27,5 +29,3 @@
   - name: run a shell, we can use pipe and redirects and stuff
     shell:
       cmd: grep ubuntu /etc/passwd >> /var/www/html/index.html
-  - name: create a directory which should cause a failure 
-    command: mkdir /var/testdir1
