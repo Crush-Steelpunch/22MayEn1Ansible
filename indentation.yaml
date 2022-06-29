@@ -4,7 +4,7 @@
   tasks:
   - task_level:
     module:
-      module_attrs:
+      module_attrs_level:
 
 - playbook: This is level1
   name:  This level of indetation is for the whole playbook
