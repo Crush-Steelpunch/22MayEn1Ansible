@@ -32,7 +32,7 @@
     register: command_output_var
   - name: Use debug to print the registerd variable
     debug:
-      var: command_output_var
+      var: command_output_var.stdout
   - name: run a shell, we can use pipe and redirects and stuff
     shell:
       cmd: grep ubuntu /etc/passwd >> /var/www/html/index.html
