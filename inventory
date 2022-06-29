@@ -1,0 +1,10 @@
+all:
+  hosts:
+  children:
+    class-vms:
+      hosts:
+        docker.mshome.net:
+        primary.mshome.net:
+    others:
+      hosts:
+        qa.com:
