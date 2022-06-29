@@ -7,6 +7,7 @@
     command: mkdir /var/testdir1
     register: mkdir_output_var
     failed_when: "'File exists' not in mkdir_output_var.stderr and mkdir_output_var.rc != 0 "
+
   - name: Install nginx httpd  (state=present is optional)
     apt:
       #name: nginx=1.18.0
@@ -28,6 +29,10 @@
       enabled: yes
   - name: run some command for the lols
     command: grep ubuntu /etc/passwd
+    register: command_output_var
+  - name: Use debug to print the registerd variable
+    debug:
+      var: command_output_var
   - name: run a shell, we can use pipe and redirects and stuff
     shell:
       cmd: grep ubuntu /etc/passwd >> /var/www/html/index.html
