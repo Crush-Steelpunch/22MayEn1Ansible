@@ -5,6 +5,8 @@
   tasks:
   - name: create a directory which should cause a failure 
     command: mkdir /var/testdir1
+    register: mkdir_output_var
+    failed_when: "'File exists' not in mkdir_output_var.stderr"
   - name: Install nginx httpd  (state=present is optional)
     apt:
       #name: nginx=1.18.0
