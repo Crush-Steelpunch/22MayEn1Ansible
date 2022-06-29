@@ -1,0 +1,25 @@
+# You only need about three levels of indentation.
+
+- play_level:
+  tasks:
+  - task_level:
+    module:
+      module_attrs:
+
+- playbook: This is level1
+  name:  This level of indetation is for the whole playbook
+  host:
+  become:
+  play_level_attributes:
+  tasks: 
+  - module: this is level 2, for the individual tasks
+      module_attributes: this is level 3
+      text: This levels if for the module attributes
+      text2: found in ansible-doc <modulename>
+    task_name: 
+    register:
+    failed_when:
+    changed_when:
+    when:
+  - module: Next task at this level
+      attrs: attributes for this task here
