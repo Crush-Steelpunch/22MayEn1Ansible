@@ -27,6 +27,10 @@
       name: nginx.service
       state: started
       enabled: yes
+    register: systemd_task_var
+  - name: debug the previous task
+    debug:
+      var: systemd_task_var 
   - name: run some command for the lols
     command: grep ubuntu /etc/passwd
     register: command_output_var
