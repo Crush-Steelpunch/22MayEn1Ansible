@@ -1,0 +1,17 @@
+- name: variable example
+  hosts: localhost
+  become: true
+  tasks:
+  - name: install a packgae
+    apt:
+      name: ncdu
+    register: this_task_var   # set up a variable to capture the task result
+
+  - name: print the var
+    debug:
+      var: this_task_var
+  - name: do something depending on the cache_time
+    when: this_task_var.cache_update_time > 1
+    debug:
+      msg: "this will only print if the cache update time was greater than 1"
+
