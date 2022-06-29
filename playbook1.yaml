@@ -5,7 +5,8 @@
   tasks:
   - name: Install nginx httpd  (state=present is optional)
     apt:
-      name: nginx=1.18.0
+      #name: nginx=1.18.0
+      name: nginx
       state: present
   - name: Install my super ace website
     copy:
