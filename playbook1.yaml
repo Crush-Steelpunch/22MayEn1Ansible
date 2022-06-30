@@ -2,6 +2,8 @@
 
 - hosts: class-vms
   become: true
+  vars:
+    leon_var: "Some Default Text"
   tasks:
   - name: create a directory which should cause a failure 
     command: mkdir /var/testdir1
@@ -51,7 +53,7 @@
 #  - name: run a shell, we can use pipe and redirects and stuff
 #    shell:
 #      cmd: grep ubuntu /etc/passwd >> /var/www/html/index.html
----
+#---
 
 - name: check we can hit the docker machine from the local machine 
   hosts: localhost
