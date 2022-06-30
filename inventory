@@ -10,3 +10,6 @@ all:
     others:
       hosts:
         qa.com:
+    jenkins:
+      hosts:
+        jenkins.mshome.net:
