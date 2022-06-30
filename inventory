@@ -4,7 +4,9 @@ all:
     class-vms:
       hosts:
         docker.mshome.net:
+          leon_var: "this is docker"
         primary.mshome.net:
+          leon_var: "this is primary"
     others:
       hosts:
         qa.com:
