@@ -15,7 +15,7 @@
       state: present
   - name: Install my super ace website
     copy:
-      content: 'This is my ansible deployed Web Server Using Nginx'
+      content: 'This is my ansible deployed Web Server Using Nginx. the Var is set to {{ leon_var }}'
       dest: /var/www/html/index.html 
   - name: Create a directory in the webserver
     file:
@@ -38,6 +38,6 @@
   - name: Use debug to print the registerd variable
     debug:
       msg: Here is the output from the previous task {{ command_output_var.stdout }}
-  - name: run a shell, we can use pipe and redirects and stuff
-    shell:
-      cmd: grep ubuntu /etc/passwd >> /var/www/html/index.html
+#  - name: run a shell, we can use pipe and redirects and stuff
+#    shell:
+#      cmd: grep ubuntu /etc/passwd >> /var/www/html/index.html
