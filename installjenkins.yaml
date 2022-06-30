@@ -2,7 +2,7 @@
   become: true
 
   vars:
-    jenkins_hostname: jenkins.example.com
+    jenkins_hostname: jenkins.mshome.net
     java_packages:
       - openjdk-11-jdk
 
