@@ -43,7 +43,7 @@
       url: http://docker.mshome.net
       return_content: yes
     register: this
-    failed_when: "{{ leon_var }} not in this.content"
+    failed_when: leon_var not in this.content
   - name: output the web contents
     debug:
       var: this.content
