@@ -51,3 +51,17 @@
 #  - name: run a shell, we can use pipe and redirects and stuff
 #    shell:
 #      cmd: grep ubuntu /etc/passwd >> /var/www/html/index.html
+---
+
+- name: check we can hit the docker machine from the local machine 
+  hosts: localhost
+  tasks:
+  - name: check website content
+    uri:
+      url: http://docker.mshome.net
+      return_content: yes
+    register: this
+    failed_when: leon_var not in this.content
+  - name: output the web contents
+    debug:
+      var: this.content
