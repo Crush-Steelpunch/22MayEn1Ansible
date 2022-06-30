@@ -1,0 +1,5 @@
+- name: playbook that uses a role
+  hosts: class-vms,jenkins
+  become: true
+  roles:
+  - role: ansibleexercise

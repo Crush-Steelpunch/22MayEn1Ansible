@@ -1,2 +1,3 @@
 ---
 # vars file for ansibleexercise
+exercise_git_repo: https://github.com/Crush-Steelpunch/22mayenablejenkins.git

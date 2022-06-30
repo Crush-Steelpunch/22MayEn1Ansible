@@ -1,7 +1,11 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+
+- Create a playbook that will clone down a specific Git repo.
+- Create a playbook that takes the IP of your host and creates a file containing that IP
+- Use facts to get a playbook to print a message on the console, only if the OS is Ubuntu.
+
 
 Requirements
 ------------
