@@ -7,5 +7,5 @@
       - openjdk-11-jdk
 
   roles:
-    - role: geerlingguy.java
-    - role: geerlingguy.jenkins
+    - role: java
+    - role: jenkins
