@@ -2,22 +2,25 @@
 
 - hosts: class-vms
   become: true
-#  vars:
-#    leon_var: "Some Default Text"
+  vars:
+    leon_var: "Some Default Text"
   tasks:
   - name: create a directory which should cause a failure 
     command: mkdir /var/testdir1
     register: mkdir_output_var
     failed_when: "'File exists' not in mkdir_output_var.stderr and mkdir_output_var.rc != 0 "
-
   - name: Install nginx httpd  (state=present is optional)
     apt:
       #name: nginx=1.18.0
       name: nginx
       state: present
+  #- name: Install my super ace website
+  #  copy:
+  #    content: 'This is my ansible deployed Web Server Using Nginx. the Var is set to {{ leon_var }}'
+  #    dest: /var/www/html/index.html 
   - name: Install my super ace website
-    copy:
-      content: 'This is my ansible deployed Web Server Using Nginx. the Var is set to {{ leon_var }}'
+    template:
+      src: templates/index.j2
       dest: /var/www/html/index.html 
   - name: Create a directory in the webserver
     file:
