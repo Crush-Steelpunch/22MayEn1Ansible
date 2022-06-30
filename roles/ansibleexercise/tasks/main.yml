@@ -2,7 +2,7 @@
 # tasks file for ansibleexercise
 - name: Clone down a git repo that was specified
   git:
-    repo: {{ exercise_git_repo }}
+    repo: "{{ exercise_git_repo }}"
     dest: /var/gitrepo
 - name: create file with host ip in it
   copy:
