@@ -40,7 +40,6 @@
       msg: Here is the output from the previous task {{ command_output_var.stdout }}
   - name: check website content
     uri:
-      - name: Check that a page returns a status 200 and fail if the word AWESOME is not in the >
       url: http://docker.mshome.net
       return_content: yes
     register: this
